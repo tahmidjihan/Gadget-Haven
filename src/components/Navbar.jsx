@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { FaRegHeart } from 'react-icons/fa';
+import Home from './../pages/home';
 
 function Menu() {
   return (
@@ -22,11 +23,22 @@ function Menu() {
 
 function Navbar() {
   const location = useLocation();
+  const [home, setHome] = useState(false);
   useEffect(() => {
-    console.log(location);
+    if (location.pathname === '/') {
+      setHome(true);
+    } else {
+      setHome(false);
+    }
+    console.log(Home);
   }, [location]);
   return (
-    <div className='navbar bg-base-100 w-10/12 mx-auto pt-5'>
+    <div
+      className={`navbar mx-auto pt-5 ${
+        home
+          ? 'absolute z-50 left-1/2 -translate-x-1/2 text-white mt-6 w-9/12'
+          : 'bg-base-100  w-10/12'
+      }`}>
       <div className='navbar-start'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>

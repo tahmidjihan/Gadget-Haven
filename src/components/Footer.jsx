@@ -7,7 +7,7 @@ function Footer() {
         <h1 className='font-extrabold text-3xl my-3 pt-10'>Gadgets-heaven</h1>
         <p>Leading the way in cutting-edge technology and innovation.</p>
         <div class='divider'></div>
-        <div className='flex justify-around w-10/12 mx-auto text-gray-500 my-7'>
+        <div className='flex justify-around lg:flex-row flex-col w-10/12 mx-auto text-gray-500 my-7'>
           <nav className='flex flex-col text-center gap-2'>
             <h6 className='footer-title text-black'>Services</h6>
             <a className='link link-hover'>Branding</a>
