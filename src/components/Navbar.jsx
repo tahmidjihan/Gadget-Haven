@@ -30,7 +30,6 @@ function Navbar() {
     } else {
       setHome(false);
     }
-    console.log(Home);
   }, [location]);
   return (
     <div

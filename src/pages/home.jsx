@@ -3,14 +3,32 @@ import Card from './../components/card';
 
 function Home() {
   const [devices, setDevices] = useState([]);
+  const [fullDevices, setFullDevices] = useState([]);
   useEffect(() => {
     fetch(
-      'https://gist.githubusercontent.com/tahmidjihan/2f0dd11b77a04478218032863106a820/raw/d90ae2e04e7cd82bfbcdc08db422ac721ac809c4/devices.json'
+      'https://gist.githubusercontent.com/tahmidjihan/2f0dd11b77a04478218032863106a820/raw/140e9f88527a693c730b7f064ced3e8ade519a1d/devices.json'
     )
       .then((res) => res.json())
-      .then((data) => setDevices(data));
+      .then((data) => {
+        setDevices(data);
+        setFullDevices(data);
+      });
   }, []);
-  console.log(devices);
+  const filterDevices = (category) => {
+    const filtered = fullDevices.filter(
+      (device) => device.category.toLowerCase() === category
+    );
+    setDevices(filtered);
+    console.log(devices);
+  };
+  function sortByCategory(e) {
+    const targetData = e.target.innerText.toLowerCase();
+    if (targetData === 'show all') {
+      setDevices(fullDevices);
+    } else {
+      filterDevices(targetData);
+    }
+  }
   return (
     <>
       <div className=' bg-brand min-h-screen md:mb-[70vh] md:min-h-[70vh] my-10 md:w-10/12 mx-auto rounded-3xl flex flex-col relative'>
@@ -43,12 +61,14 @@ function Home() {
           <div className='mx-auto md:mx-1'>
             <div class='card bg-base-100 shadow-xl'>
               <div class='card-body items-center text-center'>
-                <div class='card-actions flex flex-col'>
+                <div
+                  class='card-actions flex flex-col'
+                  onClick={sortByCategory}>
                   <button class='btn bg-brand text-white rounded-full w-[150px] text-md text-start'>
                     Show All
                   </button>
                   <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
-                    Laptop
+                    Laptops
                   </button>
                   <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     Phones
@@ -60,10 +80,10 @@ function Home() {
                     Smart Watches
                   </button>
                   <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
-                    MacBook
+                    MacBooks
                   </button>
                   <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
-                    Iphone
+                    IPhones
                   </button>
                 </div>
               </div>
