@@ -19,20 +19,20 @@ function Home() {
       (device) => device.category.toLowerCase() === category
     );
     setDevices(filtered);
-    console.log(devices);
   };
   function sortByCategory(e) {
     const targetData = e.target.innerText.toLowerCase();
+
     if (targetData === 'show all') {
       setDevices(fullDevices);
-    } else if (targetData === '') {
+    } else if (targetData.length >= 20) {
     } else {
       filterDevices(targetData);
     }
   }
   return (
     <>
-      <div className=' bg-brand min-h-screen md:mb-[70vh] md:min-h-[70vh] my-10 md:w-10/12 mx-auto rounded-3xl flex flex-col relative'>
+      <div className=' bg-brand min-h-screen md:mb-[70vh] md:min-h-[70vh] my-10 md:w-10/12 rounded-b-xl mx-auto rounded-3xl flex flex-col relative'>
         <div className='text-white text-center w-md md:max-w-4xl flex flex-col gap-7 mx-auto pt-36'>
           <h1 className='text-5xl font-extrabold '>
             Upgrade Your Tech Accessorize with Gadget Heaven Accessories

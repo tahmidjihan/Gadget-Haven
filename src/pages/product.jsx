@@ -48,7 +48,16 @@ function Product() {
   return (
     <>
       <div className='min-h-screen relative'>
-        <div className='bg-brand w-full h-[60vh] lg:h-[40vh]'></div>
+        <div className='bg-brand w-full h-[60vh] lg:h-[40vh]'>
+          <div className='text-center  text-white py-10 max-w-2xl mx-auto'>
+            <h1 className='text-4xl font-bold '>Product Details</h1>
+            <p className=''>
+              Explore the latest gadgets that will take your experience to the
+              next level. From smart devices to the coolest accessories, we have
+              it all!
+            </p>
+          </div>
+        </div>
         <div className='bg-base-300 w-full lg:h-[60vh] h-[100vh]'></div>
         <div className=' mx-auto overflow-hidden absolute flex lg:w-[1100px] top-1/2 -translate-y-1/2 md:left-1/2 md:-translate-x-1/2 border-2 bg-white rounded-2xl p-[15px]'>
           <div className='lg:flex'>

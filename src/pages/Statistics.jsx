@@ -3,7 +3,9 @@ import React from 'react';
 function Statistics() {
   return (
     <>
-      <h1>Statistics page</h1>
+      <div className='bg-base-300 py-16'>
+        <h1 className='font-extrabold text-5xl text-center'>No Data To Show</h1>
+      </div>
     </>
   );
 }

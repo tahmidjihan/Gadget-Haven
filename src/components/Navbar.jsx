@@ -8,14 +8,38 @@ function Menu() {
   return (
     <>
       <li>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink
+          to={'/'}
+          className={({ isActive }) =>
+            isActive
+              ? 'bg-none font-bold text-white focus:bg-none focus:font-bold focus: focus:text-white'
+              : ''
+          }>
+          Home
+        </NavLink>
       </li>
 
       <li>
-        <NavLink to={'/statistics'}>Statistics</NavLink>
+        <NavLink
+          to={'/statistics'}
+          className={({ isActive }) =>
+            isActive
+              ? 'bg-none font-bold text-brand focus:bg-none focus:font-bold focus: focus:text-brand'
+              : ''
+          }>
+          Statistics
+        </NavLink>
       </li>
       <li>
-        <NavLink to={'/dashboard'}>Dashboard</NavLink>
+        <NavLink
+          to={'/dashboard'}
+          className={({ isActive }) =>
+            isActive
+              ? 'bg-none font-bold text-brand focus:bg-none focus:font-bold focus: focus:text-brand'
+              : ''
+          }>
+          Dashboard
+        </NavLink>
       </li>
       <li>
         <div className='mx-auto gap-2 flex sm:hidden'>
@@ -74,7 +98,7 @@ function Navbar() {
         <a className='btn btn-ghost text-xl'>Gadgets-heaven</a>
       </div>
       <div className='navbar-center hidden lg:flex'>
-        <ul className='menu menu-horizontal px-1'>
+        <ul className='menu menu-horizontal px-1 '>
           <Menu />
         </ul>
       </div>
