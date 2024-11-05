@@ -6,6 +6,7 @@ import Home from './pages/home';
 import Statistics from './pages/Statistics';
 import Dashboard from './pages/Dashboard';
 import Root from './root';
+import Product from './pages/product';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: '/products/:id',
+        path: '/product/:id',
+        loader: ({ params }) => {
+          return params;
+        },
+        element: <Product />,
       },
     ],
   },

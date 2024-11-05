@@ -25,6 +25,7 @@ function Home() {
     const targetData = e.target.innerText.toLowerCase();
     if (targetData === 'show all') {
       setDevices(fullDevices);
+    } else if (targetData === '') {
     } else {
       filterDevices(targetData);
     }
@@ -45,11 +46,12 @@ function Home() {
             Shop now
           </button>
         </div>
+        <div className='bg-brand w-full min-h-[30vh]'></div>
         <figure className=' overflow-hidden lg:absolute flex top-[50vh] lg:left-1/2 lg:-translate-x-1/2 border-2 bg-[rgba(255,255,255,0.4)] border-white rounded-2xl p-[15px]'>
           <img
-            src='assets/banner.jpg'
+            src='../assets/banner.jpg'
             alt=''
-            className='size-cover center rounded-xl w-xs md:max-w-[1062px] min-h-[563px] md:h-[563px]'
+            className='size-cover center rounded-xl w-xs md:max-w-[1062px] min-h-[533px] md:h-[563px]'
           />
         </figure>
       </div>
@@ -59,30 +61,30 @@ function Home() {
         </h1>
         <div className='flex md:flex-row xl:w-9/12 mx-auto justify-between flex-col'>
           <div className='mx-auto md:mx-1'>
-            <div class='card bg-base-100 shadow-xl'>
-              <div class='card-body items-center text-center'>
+            <div className='card bg-base-100 shadow-xl'>
+              <div className='card-body items-center text-center'>
                 <div
-                  class='card-actions flex flex-col'
+                  className='card-actions flex flex-col'
                   onClick={sortByCategory}>
-                  <button class='btn bg-brand text-white rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-brand text-white rounded-full w-[150px] text-md text-start'>
                     Show All
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     Laptops
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     Phones
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     Accessories
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     Smart Watches
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     MacBooks
                   </button>
-                  <button class='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
+                  <button className='btn bg-base-300 text-gray-500 rounded-full w-[150px] text-md text-start'>
                     IPhones
                   </button>
                 </div>

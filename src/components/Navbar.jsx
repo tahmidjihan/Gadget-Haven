@@ -17,6 +17,16 @@ function Menu() {
       <li>
         <NavLink to={'/dashboard'}>Dashboard</NavLink>
       </li>
+      <li>
+        <div className='mx-auto gap-2 flex sm:hidden'>
+          <a className='btn rounded-full text-2xl'>
+            <MdOutlineShoppingCart />
+          </a>
+          <a className='btn rounded-full text-2xl'>
+            <FaRegHeart />
+          </a>
+        </div>
+      </li>
     </>
   );
 }
@@ -68,7 +78,7 @@ function Navbar() {
           <Menu />
         </ul>
       </div>
-      <div className='navbar-end gap-5'>
+      <div className='navbar-end gap-5 hidden sm:flex'>
         <a className='btn rounded-full text-2xl'>
           <MdOutlineShoppingCart />
         </a>
