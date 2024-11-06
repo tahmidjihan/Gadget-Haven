@@ -1,8 +1,33 @@
-# React + Vite
+# Gadget Havens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Website
 
-Currently, two official plugins are available:
+Explore the live website here: [https://stunning-klepon-2d056e.netlify.app/](https://stunning-klepon-2d056e.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Documentation
+
+For detailed requirements and specifications, view the Requirement Document: [https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf)
+
+## Project Description
+
+Gadget Havens is a React-based eCommerce website designed for gadget enthusiasts. It allows users to explore, like, and add gadgets to their cart, with features that enhance the shopping experience.
+
+## Features
+
+1. Like Product Cards: Users can like product cards.
+2. Add to Cart: Easily add items to the cart.
+3. Beautiful Toasts: Interactive toasts for user actions.
+4. Category-Based Search: Find gadgets by specific categories.
+5. Responsive Design: Optimized for both desktop and mobile devices.
+
+## React Fundamentals Used
+
+- Component-Based Structure
+- Props and State Management
+- Event Handling
+- Conditional Rendering
+- Hooks (useState and useEffect)
+
+## Data Handling and Management
+
+Local Storage is used to manage and persist user data, ensuring that cart items and liked products remain across sessions.
