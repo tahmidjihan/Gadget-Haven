@@ -4,6 +4,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { FaRegHeart } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import useLocalState from '../hooks/useLocalState';
 
 function Product() {
   const loaderData = useLoaderData();
@@ -41,10 +42,16 @@ function Product() {
     description,
     product_title,
     product_image,
+    product_id,
     Specification,
   } = data;
-  console.log(Specification);
 
+  function addToCart(id) {
+    useLocalState(id, 'cart', true);
+  }
+  function like(id) {
+    useLocalState(id, 'like', true);
+  }
   return (
     <>
       <div className='min-h-screen relative'>
@@ -97,10 +104,14 @@ function Product() {
                 <button className='btn rounded-full'>{rating}</button>
               </div>
               <div>
-                <button className='btn rounded-full tex-xl bg-brand text-white'>
+                <button
+                  className='btn rounded-full tex-xl bg-brand text-white'
+                  onClick={() => addToCart(product_id)}>
                   Add to cart <IoCartOutline />
                 </button>
-                <button className='btn rounded-full tex-xl text-black'>
+                <button
+                  className='btn rounded-full tex-xl text-black'
+                  onClick={() => like(product_id)}>
                   <FaRegHeart />
                 </button>
               </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './../components/card';
+import useLocalState from '../hooks/useLocalState';
 
 function Home() {
   const [devices, setDevices] = useState([]);
@@ -14,6 +15,7 @@ function Home() {
         setFullDevices(data);
       });
   }, []);
+  useLocalState(fullDevices, 'data');
   const filterDevices = (category) => {
     const filtered = fullDevices.filter(
       (device) => device.category.toLowerCase() === category
