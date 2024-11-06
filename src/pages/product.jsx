@@ -6,6 +6,10 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import useLocalState from '../hooks/useLocalState';
 import { Helmet } from 'react-helmet';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const notify = (p) => toast.success(p);
 
 function Product() {
   const loaderData = useLoaderData();
@@ -49,10 +53,12 @@ function Product() {
 
   function addToCart(id) {
     useLocalState(id, 'cart', true);
+    notify('Added to cart');
   }
   function like(id) {
     useLocalState(id, 'like', true);
     setLikeDisable(true);
+    notify('added to liked');
   }
   const [likeDisable, setLikeDisable] = useState(false);
   return (
@@ -60,6 +66,7 @@ function Product() {
       <Helmet>
         <title>Product | Gadgets-heaven</title>
       </Helmet>
+      <ToastContainer />
       <div className='min-h-screen relative'>
         <div className='bg-brand w-full h-[60vh] lg:h-[40vh]'>
           <div className='text-center  text-white py-10 max-w-2xl mx-auto'>

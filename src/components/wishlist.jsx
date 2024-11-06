@@ -6,10 +6,10 @@ function Wishlist() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const cartRaw = localStorage.getItem('like');
-    const cart = JSON.parse(cartRaw);
+    const cart = JSON.parse(cartRaw) || [];
 
     const dataRaw = localStorage.getItem('data');
-    const data = JSON.parse(dataRaw);
+    const data = JSON.parse(dataRaw) || [];
 
     const filteredData = data.filter((item) => cart.includes(item.product_id));
     setData(filteredData);

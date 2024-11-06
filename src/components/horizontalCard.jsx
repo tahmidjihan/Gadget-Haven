@@ -2,6 +2,11 @@ import React from 'react';
 import { BsXCircle } from 'react-icons/bs';
 import useLocalState from '../hooks/useLocalState';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const notify = (p) => toast.success(p);
+
 function HorizontalCard({ btn, name, image, description, price, idx, id }) {
   function addToCart(idn) {
     useLocalState(idn, 'cart', true);
@@ -11,6 +16,7 @@ function HorizontalCard({ btn, name, image, description, price, idx, id }) {
     const dataRaw = localStorage.getItem('cart');
     const data = JSON.parse(dataRaw);
 
+    notify('successfully removed.');
     const newData = data.filter((item) => {
       return item !== idn;
     });
@@ -18,6 +24,7 @@ function HorizontalCard({ btn, name, image, description, price, idx, id }) {
   }
   return (
     <>
+      <ToastContainer />
       <div className='card card-side bg-base-100 shadow-xl max-w-6xl mx-auto flex-wrap md:flex-nowrap m-10'>
         <figure className='p-6'>
           <img
