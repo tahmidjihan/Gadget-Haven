@@ -8,11 +8,13 @@ import Dashboard from './pages/Dashboard';
 import Root from './root';
 import Product from './pages/product';
 import Warranty from './pages/Warranty';
+import Err from './pages/404';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <Err />,
     children: [
       {
         path: '/',

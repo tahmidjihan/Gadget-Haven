@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Cart from '../components/cart';
 import Wishlist from '../components/wishlist';
 
+import { Helmet } from 'react-helmet';
+
 function Dashboard() {
   const [isCart, setIsCart] = useState(true);
 
@@ -11,6 +13,9 @@ function Dashboard() {
   };
   return (
     <>
+      <Helmet>
+        <title>Dashboard | Gadgets-heaven</title>
+      </Helmet>
       <div className='min-h-screen relative'>
         <div className='bg-brand w-full h-[40vh] lg:h-[20vh]'>
           <div className='text-center  text-white py-10 max-w-2xl mx-auto'>

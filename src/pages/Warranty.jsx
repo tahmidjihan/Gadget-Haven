@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function Warranty() {
   return (
     <>
+      <Helmet>
+        <title>Warranty | Gadgets-heaven</title>
+      </Helmet>
       <div className='min-h-screen relative'>
         <div className='bg-brand w-full h-[60vh] lg:h-[40vh]'>
           <div className='text-center  text-white py-10 max-w-2xl mx-auto'>

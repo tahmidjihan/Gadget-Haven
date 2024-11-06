@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Card from './../components/card';
 import useLocalState from '../hooks/useLocalState';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [devices, setDevices] = useState([]);
@@ -34,6 +36,9 @@ function Home() {
   }
   return (
     <>
+      <Helmet>
+        <title>Home | Gadgets-heaven</title>
+      </Helmet>
       <div className=' bg-brand min-h-screen md:mb-[70vh] md:min-h-[70vh] my-10 md:w-10/12 rounded-b-xl mx-auto rounded-3xl flex flex-col relative'>
         <div className='text-white text-center w-md md:max-w-4xl flex flex-col gap-7 mx-auto pt-36'>
           <h1 className='text-5xl font-extrabold '>
@@ -45,7 +50,7 @@ function Home() {
             it all!
           </p>
           <button className='btn bg-white rounded-full text-bold text-xl text-brand-dark max-w-40 mx-auto mb-10'>
-            Shop now
+            <Link to={'/dashboard'}>Shop now</Link>
           </button>
         </div>
         <div className='bg-brand w-full min-h-[30vh]'></div>

@@ -5,6 +5,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import useLocalState from '../hooks/useLocalState';
+import { Helmet } from 'react-helmet';
 
 function Product() {
   const loaderData = useLoaderData();
@@ -51,9 +52,14 @@ function Product() {
   }
   function like(id) {
     useLocalState(id, 'like', true);
+    setLikeDisable(true);
   }
+  const [likeDisable, setLikeDisable] = useState(false);
   return (
     <>
+      <Helmet>
+        <title>Product | Gadgets-heaven</title>
+      </Helmet>
       <div className='min-h-screen relative'>
         <div className='bg-brand w-full h-[60vh] lg:h-[40vh]'>
           <div className='text-center  text-white py-10 max-w-2xl mx-auto'>
@@ -66,7 +72,7 @@ function Product() {
           </div>
         </div>
         <div className='bg-base-300 w-full lg:h-[60vh] h-[100vh]'></div>
-        <div className=' mx-auto overflow-hidden absolute flex lg:w-[1100px] top-1/2 -translate-y-1/2 md:left-1/2 md:-translate-x-1/2 border-2 bg-white rounded-2xl p-[15px]'>
+        <div className=' mx-auto overflow-hidden absolute left-2 flex lg:w-[1100px] top-1/2 -translate-y-1/2 md:left-1/2 md:-translate-x-1/2 border-2 bg-white rounded-2xl p-[15px]'>
           <div className='lg:flex'>
             <div className='img'>
               <img
@@ -111,6 +117,7 @@ function Product() {
                 </button>
                 <button
                   className='btn rounded-full tex-xl text-black'
+                  disabled={likeDisable}
                   onClick={() => like(product_id)}>
                   <FaRegHeart />
                 </button>
