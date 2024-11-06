@@ -11,7 +11,6 @@ function Wishlist() {
     const dataRaw = localStorage.getItem('data');
     const data = JSON.parse(dataRaw);
 
-    console.log(data);
     const filteredData = data.filter((item) => cart.includes(item.product_id));
     setData(filteredData);
   }, []);

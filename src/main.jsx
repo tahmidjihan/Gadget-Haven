@@ -7,6 +7,7 @@ import Statistics from './pages/Statistics';
 import Dashboard from './pages/Dashboard';
 import Root from './root';
 import Product from './pages/product';
+import Warranty from './pages/Warranty';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: '/warranty',
+        element: <Warranty />,
       },
       {
         path: '/product/:id',

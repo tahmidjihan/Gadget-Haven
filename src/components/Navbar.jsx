@@ -32,6 +32,17 @@ function Menu() {
       </li>
       <li>
         <NavLink
+          to={'/warranty'}
+          className={({ isActive }) =>
+            isActive
+              ? 'bg-none font-bold text-brand focus:bg-none focus:font-bold focus: focus:text-brand'
+              : ''
+          }>
+          Warranty
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to={'/dashboard'}
           className={({ isActive }) =>
             isActive
